@@ -94,3 +94,11 @@ primary_branch = main
 managed_services = klipper
 install_script = install.sh
 
+[update_manager roadrunner-filament-sensor]
+type = git_repo
+path = ~/roadrunner-filament-sensor
+origin = https://github.com/EiNSTeiN-/roadrunner-filament-sensor.git
+install_script = install.sh
+primary_branch = main
+managed_services = klipper
+
