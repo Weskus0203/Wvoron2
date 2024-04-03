@@ -51,6 +51,14 @@ origin = https://github.com/protoloft/klipper_z_calibration.git
 install_script = install.sh
 managed_services = klipper
 
+[update_manager moonraker-telegram-bot]
+type = git_repo
+path = ~/moonraker-telegram-bot
+origin = https://github.com/nlef/moonraker-telegram-bot.git
+env = ~/moonraker-telegram-bot-env/bin/python
+requirements = scripts/requirements.txt
+install_script = scripts/install.sh
+
 [update_manager beacon]
 type = git_repo
 channel = dev
@@ -96,27 +104,4 @@ origin = https://github.com/andrewmcgr/klipper_tmc_autotune.git
 managed_services = klipper
 primary_branch = main
 install_script = install.sh
-
-[notifier print_start]
-url = tgram://6957963161:AAHrVZQiZpNtc8FXLW9lgklhsgEeoaX0Vnk/5098204551
-events = started
-body = Your printer started printing '{event_args[1].filename}'
-
-[notifier print_complete]
-url = tgram://6957963161:AAHrVZQiZpNtc8FXLW9lgklhsgEeoaX0Vnk/5098204551
-events = complete
-body = Your printer completed printing '{event_args[1].filename}'
-attach = http://192.168.10.41/webcam/?action=snapshot
-
-[notifier print_error]
-url = tgram://6957963161:AAHrVZQiZpNtc8FXLW9lgklhsgEeoaX0Vnk/5098204551
-events = error
-body = {event_args[1].message}
-attach = http://192.168.10.41/webcam/?action=snapshot
-
-[notifier my_telegram_notifier]
-url = tgram://6957963161:AAHrVZQiZpNtc8FXLW9lgklhsgEeoaX0Vnk/5098204551
-events = gcode
-body = {event_message}
-attach = http://192.168.10.41/webcam/?action=snapshot
 
