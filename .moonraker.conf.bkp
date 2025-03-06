@@ -44,15 +44,6 @@ type = web
 repo = fluidd-core/fluidd
 path = ~/fluidd
 
-[update_manager KlipperScreen]
-type = git_repo
-path = ~/KlipperScreen
-origin = https://github.com/KlipperScreen/KlipperScreen.git
-virtualenv = ~/.KlipperScreen-env
-requirements = scripts/KlipperScreen-requirements.txt
-system_dependencies = scripts/system-dependencies.json
-managed_services = KlipperScreen
-
 [update_manager moonraker-telegram-bot]
 type = git_repo
 path = ~/moonraker-telegram-bot
